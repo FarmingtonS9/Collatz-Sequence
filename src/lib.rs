@@ -4,7 +4,8 @@ mod collatz_seq {
         //Collatz sequence
         //Even number: n / 2
         //Odd number: (n * 3) + 1
-        let mut col_seq: Vec<i32> = [0].to_vec();
+
+        let mut col_seq: Vec<i32> = [0].to_vec(); //Initialised
 
         while number != 1 {
             if number % 2 == 0 {
@@ -17,6 +18,9 @@ mod collatz_seq {
                 col_seq.push(number)
             }
         }
+
+        //Print individual numbers without needing to implement the Display trait for Vec<i32> types.
+        //Will change to be a separate function in future iterations.
         for n in col_seq.iter() {
             print!("{}, ", n)
         }
@@ -24,6 +28,7 @@ mod collatz_seq {
     }
 }
 
+//Unit tests currently don't work.
 #[cfg(test)]
 mod tests {
     use crate::collatz_seq::collatz_sequence;
